@@ -2,7 +2,7 @@
 
 <img src="teaser.png" alt="teaser" width="50%" />
 
-[Paper](https://arxiv.org/abs/2111.02045)
+[Paper](https://arxiv.org/abs/2111.02045) [code](https://github.com/ChenhLiwnl/deep-rs)
 
 The official code repository for our TPAMI paper 'Deep Point Set Resampling via Gradient Fields'.
 
