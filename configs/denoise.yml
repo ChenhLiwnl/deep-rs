@@ -1,0 +1,49 @@
+# demo configuration
+model:
+
+  encoder:
+    type: knn
+    dynamic_graph: false
+    num_convs: 7
+    conv_channels: 48
+    conv_num_fc_layers: 5
+    conv_growth_rate: 24
+    conv_knn: 30
+  vecfield:
+    type: knn
+    knn: 24
+    style : normal
+    radius: 0.2
+    num_points : 24
+    raise_xyz_channels: 48
+    
+train:
+  seed: 2021
+  train_batch_size: 4
+  num_workers: 4
+  lr: 5.e-4
+  weight_decay: 0.
+  vec_avg_knn: 4
+  max_iters: 1000000
+  val_freq: 2000
+scheduler:
+  factor: 0.6
+  patience: 100
+  threshold : 1.e-5
+
+dataset:
+  method : deeprs
+  base_dir : # directory that you save your denoising results
+  dataset_root: # clean point cloud for training and evaluation
+  input_root: # noisy data for evaluation
+  dataset : PUNet
+  resolutions: 
+      - '10000_poisson'
+      - '30000_poisson'
+      - '10000_poisson'
+  patch_size: 1000
+  num_pnts: 10000
+  noise_min: 0.005
+  noise_max: 0.030
+  aug_rotate: true
+  val_noise: 0.02
